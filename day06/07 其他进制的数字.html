@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /*
+        *
+        * 在JS中，16进制数以0x开头表示，
+        * 8进制数，用0开头表示
+        * 2进制，则以0b开头
+        *
+        * 注意：不是所有浏览器都支持
+        * 二进制的字符串，做强制类型转换时，不同的浏览器结果可能不同
+        *
+        * 可以在parseInt()中传递一个参数，来指定数字的进制
+        *
+        * */
+
+        var a = "070";
+        document.write(parseInt(a, 8)) // 56
+        document.write(parseInt(a, 10)) // 70
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

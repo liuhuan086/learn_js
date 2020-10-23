@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        *
+        * 将其他数据类型转换为Number
+        *
+        * 方式一：
+        *   - 使用Number()函数
+        *
+        *       - 字符串
+        *           - 如果是纯数字字符串，可以直接转换成对应的数字
+        *           - 如果不是，则转换为NaN
+        *           - 如果是空字符串，则将转换为0（number）
+        *
+        *       - 布尔值
+        *           - true  转换成 1
+        *           - false 转换成 0
+        *
+        *       - null
+        *           - null 转换成数字 0
+        *
+        *       - undefined
+        *           - undefined 转换成 NaN
+        *
+        * */
+
+        // var a = "123";
+        // var b = Number(a);
+        // document.write(typeof b); // number
+        // document.write("\n");
+        //
+        // var c = "abc";
+        // var d = Number(c);
+        // document.write(d); // NaN
+        // document.write("\n");
+        //
+        // var e = "";
+        // var f = Number(e); // 0
+        // document.write(typeof f); // number
+        // document.write("\n");
+        //
+        // var g = true;
+        // var h = false;
+        // document.write(Number(g)) // true为1
+        // document.write("\n");
+        // document.write(Number(h)); // false为0
+        // document.write("\n");
+        //
+        // var i = null;
+        // document.write(Number(i)); // 0
+        // document.write("\n");
+        //
+        // var j = undefined;
+        // document.write(Number(j)); // NaN
+        // document.write("\n");
+
+        /*
+        *
+        * 方式二：
+        *   - 这种方式专门用来处理字符串
+        *       - parseInt()
+        *           - 从字符串的左边开始，把有效的整数取出，一旦遇到非数字类型的，后面的全部抛弃，然后转换为Number,
+        *             如果一开始就不是整数，则转换成NaN
+        *
+        *       - parseFloat()
+        *           - 和parseInt类似，不过它可以获取有效的小数
+        *
+        *       - 如果对非String使用上面两个函数，它会先将其转换成String然后再操作。
+        *
+        * */
+
+        var a = "100px";
+        document.write(parseInt(a)); // 100
+        document.write("\n");
+
+        var b = "100a11";
+        document.write(parseInt(b)); // 100
+        document.write("\n");
+
+        var c = "a100"
+        document.write(parseInt(c)); // NaN
+        document.write("\n");
+
+        var d = "100.11";
+        document.write(parseInt(d)); // 100
+        document.write("\n");
+        document.write(parseFloat(d)); // 100.11
+        document.write("\n");
+
+        var e = true;
+        document.write(parseInt(e)); // NaN
+        document.write("\n");
+
+        var f = null;
+        document.write(parseInt(f)); // NaN
+        document.write("\n");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        *
+        * 将其他的数据类型转换为Boolean
+        *
+        * 使用Boolean函数
+        *   - 数字 ---> 布尔
+        *       - 除了0和NaN，其余转换的结果都是true
+        *
+        *   - 字符串 ---> 布尔
+        *       - 除了空字符串，其他结果都是true
+        *
+        *   - null ---> 布尔
+        *       - false
+        *
+        *   - undefined ---> 布尔
+        *       - false、
+        *
+        *   - 对象也会转换为true
+        *
+        * */
+
+        var a = 123;
+        document.write(typeof a);
+        document.write("\n");
+
+        document.write(Boolean(a));
+        document.write("\n");
+
+        var b = null;
+        document.write(Boolean(b)); // false
+        document.write("\n");
+
+        var c = 0;
+        document.write(Boolean(c)); // false
+        document.write("\n");
+
+        var d = "";
+        document.write(Boolean(d)); // false
+        document.write("\n");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

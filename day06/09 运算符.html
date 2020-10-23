@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /*
+        *
+        * 运算符也叫操作符
+        *   通过运算符可以对一个或多个值进行运算，然后将运算后的结果进行返回
+        *   比如：
+        *       typeof就是一个运算符，可以用来获得一个值的类型，typeof返回的是字符串。
+        *
+        * 算数运算符
+        *   +
+        *   -
+        *   *
+        *   /
+        *   %   取模运算（取余数）
+        *
+        * */
+
+
+        /*
+        *   加法运算：
+        *       — 不会对原来的值产生影响，会返回一个结果
+        *
+        *       — 当对非Number类型的值进行运算时，会将这些值转换为Number，然后再进行运算
+        *
+        *       — 任何值和NaN做运算都得NaN
+        *
+        *       — 两个字符串相加则是把字符串进行拼接
+        *
+        *       — 任何值和字符串做加法运算，都会先转换为字符串，然后再和字符串做拼接的操作
+        *           隐式类型转换：
+        *               - 非字符类型和空字符串相加，即可将非字符类型转换成字符串类型，由浏览器自动完成，
+        *                 实际上也是调用来String()函数。
+        *
+        * */
+
+        var a = 123;
+        document.write(typeof (a + "")); // string
+
+        /*
+        *
+        * 减法运算
+        *   - 做减法运算时，会将非数值类型强制转换成数值类型，然后再做运算。
+        *   - 任何值和undefined做任何运算，结果都是NaN
+        *   - 可以通过以上特点做隐式类型转换，用非数值类型 - 0，即可得到Number类型的结果
+        *
+        * 乘法、除法运算
+        *   - 同上
+        *
+        * */
+
+        b = 100 - true; // 99
+        c = 100 - "1"; // 99
+        document.write(b);
+        document.write(c);
+
+        var d = undefined;
+        document.write(100 - d);
+        document.write(100 * d);
+        document.write(100 / d);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

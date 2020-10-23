@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /*
+        *
+        * JS中，所有的数值都是Number类型
+        * 包括整数、浮点数
+        *
+        * */
+
+        /*
+        *
+        * JS中可以使用一个运算符——typeof来判断一个变量的类型
+        * 语法：typeof 变量，会返回该变量的类型
+        *
+        * */
+
+        var a = 123;
+        var b = "123";
+
+        document.write(typeof a)
+        document.write("\n")
+        document.write(typeof b)
+        document.write("\n")
+
+        /*
+        *
+        * 数值的范围
+        * 最大值：Number.MAX_VALUE，超过该范围会提示：Infinity，表示正无穷，加个-表示负无穷
+        *
+        * */
+
+        document.write(Number.MAX_VALUE) // 1.7976931348623157e+308
+        document.write("\n")
+        document.write(Number.MIN_VALUE) // 5e-324
+        document.write("\n")
+
+        /*
+        *
+        * 字符串相乘
+        * NaN：是一个特殊的数字，英文Not a Number的简写
+        *
+        * */
+
+        var c = "abc";
+        var d = "def";
+
+        document.write(c * d) // NaN
+        document.write("\n")
+
+        document.write(typeof NaN) // number
+        document.write("\n")
+
+        /*
+        *
+        * 在JS中，整数的运算可以保证精确度，
+        * 但是浮点数则不保证精确，
+        * 所以不要用JS来对精确度需求高的场景进行计算，比如金钱方面的计算
+        *
+        * */
+
+        var e = 0.1;
+        var f = 0.2;
+        document.write(e + f) // 0.30000000000000004
+        document.write("\n")
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

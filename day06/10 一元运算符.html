@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        *
+        * 一元运算符，只需要一个操作数
+        *
+        *   + 正号
+        *       - 不会对数字产生任何影响
+        *       - 可以对其他数据类型使用+，来将起转换为Number
+        *
+        *   - 负号
+        *       - 负号可以对数字进行负号的取反
+        *       - 对于非Number类型，它会将其先转换为Number，然后再运算
+        *
+        * */
+
+        var a = 123;
+        a = -a;
+        document.write(a); // -123
+        document.write("\n");
+
+        var b = true;
+        document.write(typeof b) // boolean
+        document.write("\n");
+
+        document.write(-b); // -1
+        document.write("\n");
+
+        document.write(typeof -b); // number
+        document.write("\n");
+
+        document.write(1 + "2" + 3); // "123"
+        document.write(1 + +"2" + 3); // 6
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
