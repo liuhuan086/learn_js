@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        *
+        * JS中有三种逻辑运算符
+        *
+        * !  非
+        *   - 对非布尔值取反，先将其转换为布尔值，再判断。
+        *   - 为任意的数据类型做两次非运算，即可将其转换为布尔值
+        *
+        * && 与
+        *   - 短路运算
+        *   - 如果两个值都为true， 则返回后面个值
+        *   - 如果两个值都有false，则返回靠前的值
+        *
+        * || 或
+        *   - 短路运算
+        *   - 如果第一个值为true， 直接返回第一个值
+        *   - 如果第一个值为false，直接返回第二个值
+        *
+        * */
+
+        var res = 1 && 2;
+        document.write(res); // 2
+        document.write("\n");
+
+        var res2 = 0 || undefined; // undefined
+        document.write(res2);
+        document.write("\n");
+
+        var res3 = undefined || 0;
+        document.write(res3);
+        document.write("\n");
+
+        var res4 = undefined && 0;  // undefined
+        document.write(res4);
+        document.write("\n");
+
+        var res5 = 1 || 2; // undefined
+        document.write(res5); // 1
+        document.write("\n");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
