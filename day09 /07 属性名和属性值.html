@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="application/ecmascript">
+
+        /*
+        *
+        * 对象的属性名不强制要求遵守标识符规范，但是还是尽量按照规范的要求的去做
+        *
+        * */
+
+        /*
+        *
+        * 下面这种会报错，如果要使用特殊的属性名，不能采用 对象.属性名 的方式来操作
+        * obj.123 = 234;
+        *
+        * 可以通过其他方式来实现：
+        * obj["123"] = 234
+        *
+        * */
+
+        var obj = new Object();
+
+        // obj.123 = 234;
+        obj["123"] = 234;
+
+        // 取值，下面这样同样会报错
+        // var a = obj.123;
+
+        // 应该是怎么存，那就怎么取
+        var a = obj["123"];
+        document.write(a);
+        document.write("<br>");
+
+        /*
+        *
+        * 使用 [] 这种方式去操作属性，更加的灵活
+        * 在 [] 中可以直接传递一个变量
+        *
+        * */
+
+        obj["test"] = "测试";
+        var b = "test";
+        document.write(obj[b]);
+        document.write("<br>");
+
+        /*
+        *
+        * 属性值：
+        *   JS对象的属性值，可以是任意的数据类型，
+        *   甚至也可以是一个对象
+        *
+        * */
+
+        obj.c = true;
+        obj.d = null;
+        obj.e = undefined;
+
+        document.write(obj.c, "<br>", obj.d, "<br>", obj.e);
+        document.write("<br>");
+
+        obj.obj = obj;
+        document.write(obj.obj);
+        document.write("<br>");
+
+        document.write(obj.obj.c);
+        document.write("<br>");
+
+        obj.obj.obj2 = obj;
+        document.write(obj.obj.obj2);
+        document.write("<br>");
+
+        /*
+        *
+        * 使用in来判断对象中是否有某个属性
+        *
+        * 如果有则返回true，否则返回false
+        *
+        * 语法：
+        *   "属性名" in 对象
+        *
+        * */
+
+        document.write("c" in obj)
+        document.write("<br>");
+
+        document.write("f" in obj)
+        document.write("<br>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        *
+        * 可以为for循环语句创建一个label，来标识当前的循环
+        * 使用break时候，就可以终止指定标签的循环
+        *
+        * 使用语法：
+        *   label:循环语句
+        *
+        * */
+
+        outer:
+            for (var i = 0; i < 5; i++) {
+                inner:
+                    for (var j = 0; j < 5; j++) {
+                        document.write(i)
+                        if(i == 2){
+                            break outer;
+                        }
+                    }
+            }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
