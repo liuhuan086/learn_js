@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        *
+        * 使用工厂方法创建对象
+        *   通过该方法可以大批量的创建对象
+        *
+        * */
+
+        function createPerson(name, age){
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.sayName = function (){
+                document.write(this.name)
+            }
+            return obj;
+        }
+
+        obj2 = new createPerson("Tom", 18);
+        obj2.sayName();
+
+        obj3 = new createPerson("Jerry", 10);
+        obj3.sayName();
+
+        /*
+        *
+        * 由于工厂方法创建对象用的是new Object方法实现，
+        * 所以所有对象都是Object类型的，不能做有效的区分
+        *
+        * */
+    </script>
+</head>
+<body>
+
+</body>
+</html>
