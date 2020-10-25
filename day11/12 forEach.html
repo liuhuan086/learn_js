@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var arr = [1, 2, 3];
+        /*
+        *
+        * forEach方法需要一个函数作为参数，
+        *   - 像这种函数，由我们创建但是不由我们调用的，称为回调函数
+        *   - 数组中有几个函数就会执行几次，每次执行时，
+        *     浏览器将会遍历到的元素，以实参的形式传递，
+        *     我们可以定义形参，来读取这些内容
+        *   - 浏览器会在回调函数中传递三个参数，
+        *
+        * 这个 function是浏览器调用的
+        *
+        * * */
+
+        // arr.forEach(function () {
+        //     console.log("hello")
+        // });
+
+        arr.forEach(function (value) {
+            console.log(value);
+            // 元素
+            // 1
+            // 2
+            // 3
+        })
+
+        arr.forEach(function (value, index) {
+            console.log(index)
+            // 索引
+            // 0
+            // 1
+            // 2
+        })
+
+        arr.forEach(function (value, index, array) {
+            console.log(array)
+            // 数组
+            // [1, 2, 3]
+            // [1, 2, 3]
+            // [1, 2, 3]
+
+            document.write(array)
+
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

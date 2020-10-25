@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function myClass() {
+
+        }
+
+        myClass.prototype.name = "原型中的name";
+
+        var mc = new myClass();
+
+        document.write(mc.name);
+        document.write("<br>");
+
+        // 可以使用对象的hasOwnProperty()来检查对象自身中是否有某个属性
+        document.write(mc.hasOwnProperty("name"));
+        document.write("<br>");
+
+        mc.age = 18;
+        document.write(mc.age);
+        document.write("<br>");
+
+        document.write(mc.hasOwnProperty("age"));
+        document.write("<br>");
+
+        document.write(myClass.hasOwnProperty("hasOwnProperty"));
+        document.write("<br>");
+
+        /*
+        *
+        * 原型对象也是对象，所以它也有原型
+        *
+        * 当我们使用一个对象的属性或方法时，会先在自身中寻找，
+        * 如果没有，则去原型中找，如果原型也没有，则去原型的原型中寻找，
+        * 直到找到Object对象的原型，
+        * 如果在Object中依然没赵大，则返回undefined
+        *
+        * */
+
+        document.write(mc.__proto__);
+        document.write("<br>");
+
+        document.write(mc.__proto__.__proto__);
+        document.write("<br>");
+        document.write(mc.__proto__.__proto__.__proto__); // null
+
+        console.log(mc.__proto__); // {name: "原型中的name", constructor: ƒ}
+
+        console.log(mc.__proto__.__proto__); // {constructor: ƒ,
+                                             // __defineGetter__: ƒ,
+                                             // __defineSetter__: ƒ,
+                                             // hasOwnProperty: ƒ,
+                                             // __lookupGetter__: ƒ, …}
+
+        console.log(mc.__proto__.__proto__.__proto__); // null
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

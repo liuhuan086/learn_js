@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        *
+        * 创建一个Person构造函数
+        *   - 在Person构造函数中，为每一个对象都添加了一个sayName方法，
+        *     目前我们的方法是在函数内部创建的，
+        *     也就是构造函数每执行一次就会创建一个新的sayName方法。
+        *     也是所有实例的sayName都是唯一的
+        *
+        *     这就导致了构造函数执行一次就会创建一个新的方法
+        *     执行多少次就会创建多少个新的方法，而这个方法都是一样的
+        *
+        *     完全可以使所有对象共享同一个方法
+        *
+        * */
+
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sayName = function () {
+        //         console.log(this.name);
+        //     };
+        // }
+
+        // 改进
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            // 2、向对象中添加一个方法
+            this.sayName = func;
+        }
+
+        // 1、将方法放到全局中
+        function func() {
+            console.log(this.name);
+        }
+
+        // 谁调用，谁就是this
+        var per = new Person("Tom", 18);
+        per.sayName();
+
+        /*
+        *
+        * 问题：尽量不要往全局作用域声明函数
+        *   - 将函数定义在全局作用域中，污染了全局作用域的命名空间
+        *     （一旦定义某个函数名，其他函数就不能再重名，否则可能会产生问题）
+        *
+        *   - 定义在全局作用域中也很不安全，多个人协同开发，可能会造成命名冲突
+        *
+        * */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        /*
+        *
+        * 原型 prototype
+        *
+        * 我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype
+        * 这个属性对应着一个对象，这个对象就是我们所谓的原型对象
+        *
+        * 如果函数作为普通函数调用，prototype没有任何作用
+        *
+        * 当函数以构造函数的形式调用时，它所创建的对象中都会有一个隐含的属性，
+        * 指向该构造函数的原型对象，我们可以通过__proto__来访问该属性
+        *
+        * */
+
+        function Person() {
+        }
+
+        console.log(Person.prototype)
+
+        function Dog() {
+        }
+
+        // document.write(Person.prototype == Dog.prototype) // false
+
+        function myClass() {
+
+        }
+
+        var mc = new myClass();
+        document.write(mc.__proto__); // [object Object]
+        document.write("<br>")
+
+        document.write(mc.__proto__ == myClass.prototype); // true
+        document.write("<br>")
+
+        /*
+        *
+        * 原型对象就相当于一个公共的区域，所有同一个类的实例都可以访问到这个原型对象，
+        * 基于这个特点，我们可以将对象中共有的内容，统一设置到原型对象中
+        *
+        * 访问对象的属性或方法时，先在对象自身查找，如果没有，再去原型对象中查找
+        *
+        * 以后我们创建构造函数时，可以将这些对象共有的属性和方法，统一添加到构造函数的原型对象中
+        * 这样不用分别为每一个对象添加，也不会影响到全局作用域
+        *
+        * */
+
+        myClass.prototype.common = "公共区域";
+
+        var mc1 = new myClass();
+        mc1.common = "mc的common";
+        var mc2 = new myClass();
+
+        document.write(mc1.common);
+        document.write("<br>")
+        document.write(mc2.common);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
