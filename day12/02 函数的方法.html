@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        function func() {
+            document.write(this);
+            document.write("<br>");
+            console.log(this);
+        }
+
+        // func.apply();
+        // func.call();
+
+        /*
+        *
+        * call()和apply()
+        *   - 这两个方法都是函数对象的方法，需要通过函数对象来调用
+        *   - 当对函数调用call() apply()都会调用函数执行
+        *   - 在调用call()和apply()可以将一个对象指定为第一个参数
+        *     此时这个对象将会成为函数执行时的this
+        *
+        *   - call()方法可以将实参在对象之后一次传递
+        *   - aplly()方法需要将实参封装到一个数组中统一传递
+        *
+        * */
+
+        // func.call(obj);
+        // func.apply(obj);
+
+        /*
+        *
+        *   - call()方法可以将实参在对象之后依次传递
+        *   - aplly()方法需要将实参封装到一个数组中统一传递
+        *
+        * */
+
+        var obj2 = {
+            name: "obj2",
+            sayName: function () {
+                console.log(this.name);
+            }
+        };
+
+        var obj3 = {name: "obj3"};
+
+        // 指定函数执行时的this，参数是谁，this就是谁
+        obj2.sayName.apply(obj3); // obj3
+
+        function func2(a, b) {
+            console.log("a = " + a);
+            console.log("b = " + b);
+        }
+
+        func2.call(obj2, 2, 3);
+        // func.apply(obj, 2, 3) // 报错
+        func2.apply(obj3, [2, 3])
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
